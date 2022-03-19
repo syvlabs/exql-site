@@ -84,15 +84,15 @@ const RequestDemo: FC = () =>
 
 const FunctionalFact: FC<{ side: "left" | "right" }> = (props) => {
   return <motion.div
-    className="flex max-w-7xl px-4 pb-16 mx-auto items-center"
+    className={`flex ${props.side === "left" ? "flex-col" : "flex-col-reverse"} md:flex-row max-w-7xl px-4 md:pb-16 mx-auto items-center`}
     initial={{ opacity: 0, y: -100 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-300px" }}
+    viewport={{ once: true, margin: "-30%" }}
     transition={{ duration: 0.4, type: "tween" }}
   >
     {props.side === "right" &&
       <img className="flex-1 border-2 border-gray-200 rounded-2xl shadow-xl min-w-0 max-w-full h-auto" src="/sheet1.png" />}
-    <div className={`flex-0 w-1/3 text-gray-800 ${props.side === "left" ? "mr-16" : "ml-16"}`}>
+    <div className={`flex-0 md:w-1/3 text-gray-800 ${props.side === "left" ? "md:mr-16" : "md:ml-16"} mb-4`}>
       <div className="text-4xl mb-4">Explore your big data in an instant ✨</div>
       <div>Open and explore <span className="font-medium text-emerald-700">terabytes</span> of data from your data warehouse in seconds, through an Excel-like interface</div>
     </div>
