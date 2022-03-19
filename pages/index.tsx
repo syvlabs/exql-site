@@ -9,20 +9,20 @@ const Home: NextPage = () => {
       <div className="bg-red-500 px-4 text-md md:text-lg text-white py-2 text-center">
         🚫🚀 Unlike everyone else, we have NOT raised any funding, please <a className="underline" href="mailto:exql@googlegroups.com">email us</a> if you want in!
       </div>
-      <div className="mx-auto px-4 mt-10 max-w-7xl select-none">
+      <div className="mx-auto px-4 mt-4 md:mt-10 max-w-7xl select-none">
         <div className="flex items-center">
-          <div className="text-5xl text-emerald-900 font-medium">ExQL</div>
+          <div className="text-3xl md:text-5xl text-emerald-900 font-medium">ExQL</div>
           <div className="flex-1"></div>
           <RequestDemo />
         </div>
-        <div className="mt-20 mx-auto text-4xl md:text-5xl items-center text-center max-w-3xl leading-normal">
+        <div className="mt-12 md:mt-20 mx-auto text-4xl md:text-5xl items-center text-center max-w-3xl md:leading-normal">
           Manipulate your data warehouse with Excel. Bye SQL! 👋
         </div>
-        <div className="mt-8 text-lg px-16 mx-auto items-center text-center max-w-3xl leading-normal">
+        <div className="mt-6 md:mt-8 text-md md:text-lg px-4 md:px-16 mx-auto items-center text-center max-w-3xl leading-normal">
           Through an Excel-like interface, ExQL enables business analysts to explore, query data, and build SQL data pipelines on top of their data warehouses — without actually writing a line of SQL
         </div>
-        <img className="mt-16 border-2 border-green-500 rounded-2xl mx-auto items-center shadow-xl" src="/Collaborative.png" />
-        <div className="h-16"></div>
+        <img className="mt-6 md:mt-16 border-2 border-green-500 rounded-2xl mx-auto items-center shadow-xl" src="/Collaborative.png" />
+        <div className="h-4 md:h-16"></div>
       </div>
     </div>
     <div className="bg-emerald-200 pt-16">
@@ -35,7 +35,7 @@ const Home: NextPage = () => {
     </div>
     <div className="bg-gradient-to-b from-amber-100 to-white px-4">
       <div className="pt-16 md:pt-36 mx-auto max-w-7xl">
-        <div className="text-5xl text-center mb-16 md:mb-24 text-amber-900">Your non-functional requirements hehe</div>
+        <div className="text-4xl md:text-5xl text-center mb-16 md:mb-24 text-amber-900">Your non-functional requirements hehe</div>
         <div className="flex flex-col md:flex-row mb-8 md:mb-48 text-amber-800">
           <NonFunctionalFact icon={OfficeBuildingIcon} title="Built for the Enterprise" />
           <NonFunctionalFact icon={PuzzleIcon} title="Open and Integrated" />
@@ -65,7 +65,7 @@ const Home: NextPage = () => {
 }
 
 const RequestDemo: FC = () =>
-  <div className="flex w-48 h-12 items-center text-lg font-medium rounded-lg select-none text-white bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 cursor-pointer">
+  <div className="flex w-36 md:w-48 h-10 md:h-12 items-center text-md md:text-lg font-medium rounded-lg select-none text-white bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 cursor-pointer">
     <span className="mx-auto">Request a demo</span>
   </div>
 
@@ -78,13 +78,13 @@ const FunctionalFact: FC<{ side: "left" | "right" }> = (props) => {
     transition={{ duration: 0.4, type: "tween" }}
   >
     {props.side === "right" &&
-      <img className="flex-1 border-2 border-gray-200 rounded-2xl shadow-xl min-w-0 max-w-full h-auto" src="/sheet1.png" />}
+      <img className="md:flex-1 border-2 border-gray-200 rounded-2xl shadow-xl min-w-0 max-w-full self-start" src="/sheet1.png" />}
     <div className={`flex-0 md:w-1/3 text-gray-800 ${props.side === "left" ? "md:mr-16" : "md:ml-16"} mb-4`}>
       <div className="text-4xl mb-4">Explore your big data in an instant ✨</div>
       <div>Open and explore <span className="font-medium text-emerald-700">terabytes</span> of data from your data warehouse in seconds, through an Excel-like interface</div>
     </div>
     {props.side === "left" &&
-      <img className="flex-1 border-2 border-gray-200 rounded-2xl shadow-xl min-w-0 max-w-full h-auto" src="/sheet1.png" />}
+      <img className="md:flex-1 border-2 border-gray-200 rounded-2xl shadow-xl min-w-0 max-w-full self-start" src="/sheet1.png" />}
   </motion.div>
 }
 
