@@ -1,57 +1,32 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>ExQL</title>
-        <meta name="description" content="ExQL" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          ExQL
-        </h1>
-
-        <p className={styles.description}>
-          Hi Ryan
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+  return <div className="bg-gradient-to-t from-emerald-100">
+    <div className="bg-red-500 px-4 text-lg text-white py-2 text-center">
+    🚫🚀 Unlike everyone else, we have NOT raised any funding, please <a className="underline" href="mailto:exql@googlegroups.com">email us</a> if you want in!
     </div>
-  )
+    <div className="mx-auto px-4 mt-10 max-w-7xl select-none">
+      <div className="flex items-center">
+        <div className="text-5xl text-emerald-900 font-medium">ExQL</div>
+        <div className="flex-1"></div>
+        <div className="text-lg font-medium rounded-lg py-2 px-4 select-none text-white bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 cursor-pointer">
+          Request a demo
+        </div>
+      </div>
+      <div className="mt-20 mx-auto text-5xl items-center text-center max-w-3xl leading-normal">
+        Manipulate your data warehouse with Excel. Bye SQL! 👋
+      </div>
+      <div className="mt-8 text-lg px-16 mx-auto items-center text-center max-w-3xl leading-normal">
+        Through an Excel-like interface, ExQL enables business analysts to explore, query data, and build SQL data pipelines on top of their data warehouses — without actually writing a line of SQL
+      </div>
+      {/* TODO use next/image */}
+      <img className="mt-16 border-2 border-green-500 rounded-2xl mx-auto items-center shadow-xl" src="/Collaborative.png" />
+      <div className="py-8">
+        Heheheh hi ryan
+      </div>
+    </div>
+  </div>
 }
 
 export default Home
