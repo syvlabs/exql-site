@@ -17,7 +17,7 @@ const Home: NextPage = () => {
         </div>
         <div className="mt-12 md:mt-20 mx-auto text-4xl md:text-5xl items-center text-center max-w-3xl md:leading-normal">
           <span className="text-tmblue-dark">Manipulate</span> your data warehouse <span className="text-tmblue-dark">with Excel.</span> Bye SQL!
-          <motion.div className="ml-2 inline-block" animate={{ rotate: 30 }} transition={{ repeat: Infinity, duration: 0.5, repeatType: 'reverse' }}>👋</motion.div>
+          <motion.div className="ml-1 inline-block wave-emoji" animate={{ rotate: 20 }} transition={{ repeat: Infinity, duration: 0.5, repeatType: 'reverse' }}>👋</motion.div>
         </div>
         <div className="mt-6 md:mt-8 text-md md:text-xl px-4 md:px-16 mx-auto items-center text-center max-w-3xl leading-normal">
           Through an Excel-like interface, ExQL enables business analysts to explore, query data, and build SQL data pipelines on top of their data warehouses — without actually writing a line of SQL
@@ -38,7 +38,7 @@ const Home: NextPage = () => {
       </FunctionalFact>
       <div className="h-16 md:h-16"></div>
       <FunctionalFact side="left" title="Edit your DBT data pipelines without SQL 🤯" image="/sheet3.png">
-        <div>Achieve super-fast turnaround time on pipeline change requests with the ability to safely modify the SQL queries in your DBT data pipelines.</div>
+        <div>Achieve much faster turnaround times on pipeline change requests with the ability to safely modify the SQL queries in your DBT data pipelines.</div>
       </FunctionalFact>
       <div className="h-16 md:h-16"></div>
     </div>
@@ -46,9 +46,9 @@ const Home: NextPage = () => {
       <div className="pt-16 md:pt-36 mx-auto max-w-7xl px-8">
         <div className="text-4xl md:text-5xl text-center mb-16 md:mb-24 text-amber-900">Your non-functional requirements hehe</div>
         <div className="flex flex-col md:flex-row mb-8 md:mb-48 text-amber-800">
-          <NonFunctionalFact icon={OfficeBuildingIcon} title="Built for the Enterprise" />
-          <NonFunctionalFact icon={PuzzleIcon} title="Open and Integrated" />
-          <NonFunctionalFact icon={UserGroupIcon} title="Amazing Customer Service" />
+          <NonFunctionalFact index={0} icon={OfficeBuildingIcon} title="Built for the Enterprise" />
+          <NonFunctionalFact index={1} icon={PuzzleIcon} title="Open and Integrated" />
+          <NonFunctionalFact index={2} icon={UserGroupIcon} title="Amazing Customer Service" />
         </div>
       </div>
       <div className="px-8 mx-auto max-w-7xl">
@@ -87,10 +87,10 @@ const RequestDemo: FC<{ color?: number }> = (props) => {
 const FunctionalFact: FC<{ side: "left" | "right", title: string, image: string }> = (props) => {
   return <motion.div
     className={`flex ${props.side === "left" ? "flex-col" : "flex-col-reverse"} md:flex-row max-w-7xl px-4 md:px-8 md:pb-16 mx-auto items-center`}
-    initial={{ opacity: 0, y: -30 }}
+    initial={{ opacity: 0, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-30%" }}
-    transition={{ duration: 0.4, type: "tween" }}
+    viewport={{ once: true, margin: "-20%" }}
+    transition={{ duration: 0.5, type: "tween" }}
   >
     {props.side === "right" &&
       <img className="md:flex-1 rounded shadow-xl min-w-0 max-w-full self-start" src={props.image} />}
@@ -103,12 +103,17 @@ const FunctionalFact: FC<{ side: "left" | "right", title: string, image: string 
   </motion.div>
 }
 
-const NonFunctionalFact: FC<{ title: string, icon: (props: SVGProps<SVGSVGElement>) => JSX.Element }> = (props) => {
-  return <div className="flex-1 text-center px-4 pb-12 md:pb-0">
+const NonFunctionalFact: FC<{ title: string, index: number, icon: (props: SVGProps<SVGSVGElement>) => JSX.Element }> = (props) => {
+  return <motion.div className="flex-1 text-center px-4 pb-12 md:pb-0"
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-30%" }}
+    transition={{ duration: 0.3, type: "tween", delay: 0.1*props.index }}
+  >
     <props.icon className="h-24 mx-auto text-tmred-dark" />
     <div className="text-2xl font-medium">{props.title}</div>
     <div className="text-lg mt-4">We will lorem ipsum your dolor. We will lorem ipsum your dolor. We will lorem ipsum your dolor. We will lorem ipsum your dolor. We will lorem ipsum your dolor. We will lorem ipsum your dolor. </div>
-  </div>
+  </motion.div>
 }
 
 export default Home

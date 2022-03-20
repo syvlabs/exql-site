@@ -51,3 +51,7 @@
       font-display: swap;
       font-style: italic;
 }
+
+.wave-emoji {
+  transform-origin: 80% 80%;
+}
