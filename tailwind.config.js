@@ -33,4 +33,10 @@ module.exports = {
     },
   },
   plugins: [],
+  safelist: [
+    {
+      pattern: /(border|bg|text)-(.*)-(.*)/,
+      variants: ['hover', 'active'],
+    },
+  ],
 }
