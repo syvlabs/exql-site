@@ -20,8 +20,16 @@ module.exports = {
         tmred: {
           og: '#EF4631',
           dark: '#bf3827',
+        },
+        tmblue: {
+          og: '#2292EC',
+          dark: '#1b75bd',
         }
       },
+    },
+    fontFamily: {
+      'sans': ['Plex', 'ui-sans-serif', 'system-ui'],
+      // 'modern': ['Satoshi', 'ui-sans-serif'],
     },
   },
   plugins: [],

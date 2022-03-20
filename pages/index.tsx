@@ -11,14 +11,15 @@ const Home: NextPage = () => {
       </div>
       <div className="mx-auto px-4 mt-4 md:mt-10 max-w-7xl select-none">
         <div className="flex items-center">
-          <div className="text-3xl md:text-5xl text-main-900 font-medium">ExQL</div>
+          <div className="text-3xl md:text-5xl text-main-600 font-medium">ExQL</div>
           <div className="flex-1"></div>
           <RequestDemo />
         </div>
         <div className="mt-12 md:mt-20 mx-auto text-4xl md:text-5xl items-center text-center max-w-3xl md:leading-normal">
-          Manipulate your data warehouse with Excel. Bye SQL! 👋
+          <span className="text-tmblue-dark">Manipulate</span> your data warehouse <span className="text-tmblue-dark">with Excel.</span> Bye SQL! 
+          <motion.div className="ml-2 inline-block" animate={{ rotate: 30 }} transition={{ repeat: Infinity, duration: 0.5, repeatType: 'reverse' }}>👋</motion.div>
         </div>
-        <div className="mt-6 md:mt-8 text-md md:text-lg px-4 md:px-16 mx-auto items-center text-center max-w-3xl leading-normal">
+        <div className="mt-6 md:mt-8 text-md md:text-xl px-4 md:px-16 mx-auto items-center text-center max-w-3xl leading-normal">
           Through an Excel-like interface, ExQL enables business analysts to explore, query data, and build SQL data pipelines on top of their data warehouses — without actually writing a line of SQL
         </div>
         <img className="mt-6 md:mt-16 border-2 border-main-300 rounded-2xl mx-auto items-center shadow-xl" src="/Collaborative.png" />
@@ -71,7 +72,7 @@ const RequestDemo: FC = () =>
 
 const FunctionalFact: FC<{ side: "left" | "right" }> = (props) => {
   return <motion.div
-    className={`flex ${props.side === "left" ? "flex-col" : "flex-col-reverse"} md:flex-row max-w-7xl px-4 md:pb-16 mx-auto items-center`}
+    className={`flex ${props.side === "left" ? "flex-col" : "flex-col-reverse"} md:flex-row max-w-7xl px-4 md:px-8 md:pb-16 mx-auto items-center`}
     initial={{ opacity: 0, y: -100 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-50%" }}
@@ -79,7 +80,7 @@ const FunctionalFact: FC<{ side: "left" | "right" }> = (props) => {
   >
     {props.side === "right" &&
       <img className="md:flex-1 border-2 border-gray-200 rounded-2xl shadow-xl min-w-0 max-w-full self-start" src="/sheet1.png" />}
-    <div className={`flex-0 md:w-1/3 text-gray-800 ${props.side === "left" ? "md:mr-16" : "md:ml-16"} mb-4`}>
+    <div className={`flex-0 md:w-1/3 text-gray-800 ${props.side === "left" ? "md:mr-8" : "md:ml-8"} mb-4`}>
       <div className="text-4xl mb-4">Explore your big data in an instant ✨</div>
       <div>Open and explore <span className="font-medium text-main-700">terabytes</span> of data from your data warehouse in seconds, through an Excel-like interface</div>
     </div>
