@@ -27,11 +27,19 @@ const Home: NextPage = () => {
       </div>
     </div>
     <div className="bg-main-200 pt-16">
-      <FunctionalFact side="left" />
+      <FunctionalFact side="left" title="Analyze your big data in an instant ✨" image="/sheet1.png">
+        <div>Open, explore, and analyze <span className="font-medium text-main-700">terabytes</span> of data from your data warehouse in seconds, through an Excel-like interface.</div>
+        <div className="mt-2">Each formula, filter, and pivot table that you do will automatically be converted into SQL queries in the back end.</div>
+      </FunctionalFact>
       <div className="h-16 md:h-16"></div>
-      <FunctionalFact side="right" />
+      <FunctionalFact side="right" title="Spot fixes for your data, just like Excel 🔧" image="/sheet2.png">
+        <div>Quickly apply spot fixes and overrides to specific data points to accommodate exceptions in your business logic.</div>
+        <div className="mt-2">Overrides can go through an approval process — making sure all changes are safe and reversible.</div>
+      </FunctionalFact>
       <div className="h-16 md:h-16"></div>
-      <FunctionalFact side="left" />
+      <FunctionalFact side="left" title="Edit your DBT data pipelines without SQL 🤯" image="/sheet3.png">
+        <div>Achieve super-fast turnaround time on pipeline change requests with the ability to safely modify the SQL queries in your DBT data pipelines.</div>
+      </FunctionalFact>
       <div className="h-16 md:h-16"></div>
     </div>
     <div className="bg-gradient-to-b from-amber-100 to-white">
@@ -74,22 +82,24 @@ const RequestDemo: FC<{ color?: number }> = (props) => {
   </div>
 }
 
-const FunctionalFact: FC<{ side: "left" | "right" }> = (props) => {
+// Analyze your big data in an instant ✨
+
+const FunctionalFact: FC<{ side: "left" | "right", title: string, image: string }> = (props) => {
   return <motion.div
     className={`flex ${props.side === "left" ? "flex-col" : "flex-col-reverse"} md:flex-row max-w-7xl px-4 md:px-8 md:pb-16 mx-auto items-center`}
-    initial={{ opacity: 0, y: -100 }}
+    initial={{ opacity: 0, y: -30 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-40%" }}
+    viewport={{ once: true, margin: "-30%" }}
     transition={{ duration: 0.4, type: "tween" }}
   >
     {props.side === "right" &&
-      <img className="md:flex-1 rounded shadow-xl min-w-0 max-w-full self-start" src="/sheet1.png" />}
+      <img className="md:flex-1 rounded shadow-xl min-w-0 max-w-full self-start" src={props.image} />}
     <div className={`flex-0 md:w-1/3 text-gray-800 ${props.side === "left" ? "md:mr-8" : "md:ml-8"} mb-4`}>
-      <div className="text-4xl mb-4">Explore your big data in an instant ✨</div>
-      <div>Open and explore <span className="font-medium text-main-700">terabytes</span> of data from your data warehouse in seconds, through an Excel-like interface</div>
+      <div className="text-4xl mb-4">{props.title}</div>
+      {props.children}
     </div>
     {props.side === "left" &&
-      <img className="md:flex-1 rounded shadow-xl min-w-0 max-w-full self-start" src="/sheet1.png" />}
+      <img className="md:flex-1 rounded shadow-xl min-w-0 max-w-full self-start" src={props.image} />}
   </motion.div>
 }
 
