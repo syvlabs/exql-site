@@ -46,9 +46,15 @@ const Home: NextPage = () => {
       <div className="pt-16 md:pt-36 mx-auto max-w-7xl px-8">
         <div className="text-4xl md:text-5xl text-center mb-16 md:mb-24 text-amber-900">Your non-functional requirements hehe</div>
         <div className="flex flex-col md:flex-row mb-8 md:mb-48 text-amber-800">
-          <NonFunctionalFact index={0} icon={OfficeBuildingIcon} title="Built for the Enterprise" />
-          <NonFunctionalFact index={1} icon={PuzzleIcon} title="Open and Integrated" />
-          <NonFunctionalFact index={2} icon={UserGroupIcon} title="Amazing Customer Service" />
+          <NonFunctionalFact index={0} icon={OfficeBuildingIcon} title="Built for the Enterprise">
+            ExQL was built from the ground up with Enterprise users in mind. Compliance certificates coming soon!
+          </NonFunctionalFact>
+          <NonFunctionalFact index={1} icon={PuzzleIcon} title="Open and Integrated">
+            ExQL is fully integrated with DBT and the Modern Data Stack, and is designed to work with all the modern data warehouses.
+          </NonFunctionalFact>
+          <NonFunctionalFact index={2} icon={UserGroupIcon} title="Amazing Customer Service">
+            Our hands-on enterprise support team will assist you through the whole data lifecycle — from ideation to implementation and support.
+          </NonFunctionalFact>
         </div>
       </div>
       <div className="px-8 mx-auto max-w-7xl">
@@ -76,8 +82,8 @@ const Home: NextPage = () => {
 }
 
 const RequestDemo: FC<{ color?: number }> = (props) => {
-  const color = props.color ?? 400 
-  return <div className={`flex w-36 md:w-48 h-10 md:h-12 items-center text-md md:text-lg font-medium rounded-lg select-none text-white bg-main-${color} hover:bg-main-${color+100} active:bg-main-${color+200} cursor-pointer`}>
+  const color = props.color ?? 400
+  return <div className={`flex w-36 md:w-48 h-10 md:h-12 items-center text-md md:text-lg font-medium rounded-lg select-none text-white bg-main-${color} hover:bg-main-${color + 100} active:bg-main-${color + 200} cursor-pointer`}>
     <span className="mx-auto">Request a demo</span>
   </div>
 }
@@ -108,11 +114,11 @@ const NonFunctionalFact: FC<{ title: string, index: number, icon: (props: SVGPro
     initial={{ opacity: 0, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-30%" }}
-    transition={{ duration: 0.3, type: "tween", delay: 0.1*props.index }}
+    transition={{ duration: 0.3, type: "tween", delay: 0.1 * props.index }}
   >
     <props.icon className="h-24 mx-auto text-tmred-dark" />
     <div className="text-2xl font-medium">{props.title}</div>
-    <div className="text-lg mt-4">We will lorem ipsum your dolor. We will lorem ipsum your dolor. We will lorem ipsum your dolor. We will lorem ipsum your dolor. We will lorem ipsum your dolor. We will lorem ipsum your dolor. </div>
+    <div className="text-lg mt-4">{props.children}</div>
   </motion.div>
 }
 
