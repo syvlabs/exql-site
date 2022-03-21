@@ -1,10 +1,14 @@
 import type { NextPage } from 'next'
-import { FC, SVGProps } from 'react'
-import { OfficeBuildingIcon, PuzzleIcon, UserGroupIcon } from '@heroicons/react/solid'
+import { FC, SVGProps, useState } from 'react'
+import { OfficeBuildingIcon, PlayIcon, PuzzleIcon, UserGroupIcon, XIcon } from '@heroicons/react/solid'
 import { motion } from "framer-motion"
+import Head from 'next/head'
 
 const Home: NextPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return <>
+    <Head><title>ExQL: Spreadsheets for Data Warehouses</title></Head>
     <div className="bg-gradient-to-t from-main-200">
       <div className="bg-tmred-dark px-4 text-md md:text-lg text-white py-2 text-center">
         🚫🚀 Unlike everyone else, we have NOT raised any funding, please <a className="underline" href="mailto:exql@googlegroups.com">email us</a> if you want in!
@@ -22,7 +26,26 @@ const Home: NextPage = () => {
         <div className="mt-6 md:mt-8 text-md md:text-xl px-4 md:px-16 mx-auto items-center text-center max-w-3xl leading-normal">
           Through an Excel-like interface, ExQL enables business analysts to explore, query data, and build SQL data pipelines on top of their data warehouses — without actually writing a line of SQL
         </div>
-        <img className="mt-6 md:mt-16 border-2 border-main-300 rounded mx-auto items-center shadow-xl" src="/Collaborative.png" />
+        <div className="relative bg-black rounded">
+          <motion.img
+            className="mt-6 md:mt-16 border-2 border-main-300 rounded mx-auto items-center shadow-xl"
+            src="/Collaborative.png"
+            initial={{ opacity: 1 }}
+            whileInView={{ opacity: 0.9 }}
+            viewport={{ margin: "-50%" }}
+            transition={{ duration: 0.3, type: "tween" }}
+          />
+          <div className="absolute flex items-center top-0 w-full h-full" onClick={() => setIsModalOpen(true)}>
+            <motion.div
+              className="mx-auto flex items-center bg-main-400 active:bg-main-700 drop-shadow-2xl rounded-full p-2"
+              initial={{ scale: 1 }}
+              whileHover={{ scale: 1.3 }}
+            >
+              <PlayIcon className="text-white w-16 md:w-24 inline" />
+              <span className="text-white inline text-xl md:text-3xl font-medium mr-5">Watch demo</span>
+            </motion.div>
+          </div>
+        </div>
         <div className="h-4 md:h-16"></div>
       </div>
     </div>
@@ -78,6 +101,9 @@ const Home: NextPage = () => {
         </div>
       </div>
     </div>
+    {isModalOpen &&
+      <LoomModal close={() => setIsModalOpen(false)} />
+    }
   </>
 }
 
@@ -88,7 +114,23 @@ const RequestDemo: FC<{ color?: number }> = (props) => {
   </div>
 }
 
-// Analyze your big data in an instant ✨
+const LoomModal: FC<{ close: () => void, className?: string }> = (props) => {
+  return <motion.div 
+    className={`fixed inset-0 bg-glassblack px-2 pt-20 pb-2 md:p-32 ${props.className}`} 
+    onClick={props.close}
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+  >
+    <XIcon className="fixed w-16 h-16 top-2 right-2 drop-shadow-xl text-white hover:text-main-300 active:text-main-600" onClick={props.close} />
+    <iframe
+      src="https://www.loom.com/embed/c4f474d6b31f40ea80e95c3df8f41f93"
+      frameBorder="0"
+      allowFullScreen={true}
+      className="w-full h-full"
+    >
+    </iframe>
+  </motion.div>
+}
 
 const FunctionalFact: FC<{ side: "left" | "right", title: string, image: string }> = (props) => {
   return <motion.div

@@ -24,7 +24,8 @@ module.exports = {
         tmblue: {
           og: '#2292EC',
           dark: '#1b75bd',
-        }
+        },
+        glassblack: '#000000CC',
       },
     },
     fontFamily: {
