@@ -67,7 +67,7 @@ const Home: NextPage = () => {
     </div>
     <div className="bg-gradient-to-b from-amber-100 to-white">
       <div className="pt-16 md:pt-36 mx-auto max-w-7xl px-8">
-        <div className="text-4xl md:text-5xl text-center mb-16 md:mb-24 text-amber-900">Your non-functional requirements hehe</div>
+        <div className="text-4xl md:text-5xl text-center mb-8 md:mb-16 text-amber-900">ExQL makes it Easy</div>
         <div className="flex flex-col md:flex-row mb-8 md:mb-48 text-amber-800">
           <NonFunctionalFact index={0} icon={OfficeBuildingIcon} title="Built for the Enterprise">
             ExQL was built from the ground up with Enterprise users in mind. Compliance certificates coming soon!
@@ -75,7 +75,7 @@ const Home: NextPage = () => {
           <NonFunctionalFact index={1} icon={PuzzleIcon} title="Open and Integrated">
             ExQL is fully integrated with DBT and the Modern Data Stack, and is designed to work with all the modern data warehouses.
           </NonFunctionalFact>
-          <NonFunctionalFact index={2} icon={UserGroupIcon} title="Amazing Customer Service">
+          <NonFunctionalFact index={2} icon={UserGroupIcon} title="Hands-on Customer Service">
             Our hands-on enterprise support team will assist you through the whole data lifecycle — from ideation to implementation and support.
           </NonFunctionalFact>
         </div>
@@ -107,7 +107,7 @@ const Home: NextPage = () => {
   </>
 }
 
-const RequestDemo: FC<{ color?: number }> = (props) => {
+export const RequestDemo: FC<{ color?: number }> = (props) => {
   const color = props.color ?? 400
   return <div className={`flex w-36 md:w-48 h-10 md:h-12 items-center text-md md:text-lg font-medium rounded-lg select-none text-white bg-main-${color} hover:bg-main-${color + 100} active:bg-main-${color + 200} cursor-pointer`}>
     <span className="mx-auto">Request a demo</span>
