@@ -16,6 +16,18 @@ module.exports = {
           800: '#16221f',
           900: '#0b110f',
         },
+        main2: {
+          100: '#cdf3e8',
+          200: '#9ce7d0',
+          300: '#6adab9',
+          400: '#39cea1',
+          500: '#07c28a',
+          600: '#069b6e',
+          700: '#047453',
+          800: '#034e37',
+          900: '#01271c',
+        },
+        blackish: '#1D2947',
         tmorange: '#F3A258',
         tmred: {
           og: '#EF4631',
@@ -30,13 +42,13 @@ module.exports = {
     },
     fontFamily: {
       'sans': ['Plex', 'ui-sans-serif', 'system-ui'],
-      // 'modern': ['Satoshi', 'ui-sans-serif'],
+      'sansv2': ['Inter', 'ui-sans-serif', 'system-ui'],
     },
   },
   plugins: [],
   safelist: [
     {
-      pattern: /(border|bg|text)-(.*)-(.*)/,
+      pattern: /(border|bg|text)-(.*)/,
       variants: ['hover', 'active'],
     },
   ],

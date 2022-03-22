@@ -52,6 +52,36 @@
       font-style: italic;
 }
 
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-v8-latin-regular.woff2') format('woff2'),
+      url('/fonts/inter-v8-latin-regular.woff') format('woff'),
+      url('/fonts/inter-v8-latin-regular.ttf') format('truetype');
+      font-weight: normal;
+      font-display: swap;
+      font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-v8-latin-500.woff2') format('woff2'),
+      url('/fonts/inter-v8-latin-500.woff') format('woff'),
+      url('/fonts/inter-v8-latin-500.ttf') format('truetype');
+      font-weight: 500;
+      font-display: swap;
+      font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-v8-latin-600.woff2') format('woff2'),
+      url('/fonts/inter-v8-latin-600.woff') format('woff'),
+      url('/fonts/inter-v8-latin-600.ttf') format('truetype');
+      font-weight: 600;
+      font-display: swap;
+      font-style: normal;
+}
+
 .wave-emoji {
   transform-origin: 80% 80%;
 }
