@@ -8,11 +8,20 @@ const V2: NextPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   return <div className="bg-white font-sansv2 text-blackish tracking-tighter">
-    <Head><title>ExQL: Spreadsheets for Data Warehouses</title></Head>
+    <Head>
+      <title>ExQL: Spreadsheets for Data Warehouses</title>
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="manifest" href="/site.webmanifest" />
+      <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+      <meta name="msapplication-TileColor" content="#da532c" />
+      <meta name="theme-color" content="#ffffff" />
+    </Head>
     <div>
       <div className="mx-auto px-8 mt-6 md:mt-10 max-w-7xl select-none">
         <div className="flex items-center">
-          <img src="/logo.svg" className="w-40" />
+          <img src="/logo.svg" className="w-32 md:w-40" />
           <div className="flex-1"></div>
           <RequestDemo />
         </div>
@@ -110,7 +119,7 @@ export const RequestDemo: FC<{ inverted?: boolean }> = (props) => {
   const bgNormalColor = props.inverted ? "bg-white" : "bg-main2-500"
   const bgHoverColor = props.inverted ? "bg-main2-700" : "bg-main2-600"
   const bgActiveColor = props.inverted ? "bg-main2-900" : "bg-main2-700"
-  return <div className={`flex w-36 md:w-40 h-10 md:h-12 items-center text-md md:text-md font-medium rounded select-none cursor-pointer tracking-normal ${textNormalColor} hover:${textHoverColor} ${bgNormalColor} hover:${bgHoverColor} active:${bgActiveColor}`}>
+  return <div className={`flex w-32 md:w-40 h-10 md:h-12 items-center text-sm md:text-md font-medium rounded select-none cursor-pointer tracking-normal ${textNormalColor} hover:${textHoverColor} ${bgNormalColor} hover:${bgHoverColor} active:${bgActiveColor}`}>
     <span className="mx-auto">Request a demo</span>
   </div>
 }
