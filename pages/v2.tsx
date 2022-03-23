@@ -41,7 +41,7 @@ const V2: NextPage = () => {
           />
           <div className="absolute flex items-center top-0 w-full h-full z-20" onClick={() => setIsModalOpen(true)}>
             <motion.div
-              className="mx-auto flex items-center bg-blackish active:bg-main2-500 drop-shadow-2xl rounded-full p-1"
+              className="mx-auto flex items-center bg-blackish active:bg-main2-500 rounded-full p-1"
               initial={{ scale: 1 }}
               whileHover={{ scale: 1.3 }}
             >
@@ -163,7 +163,7 @@ const FFImage: FC<{ image: string, side: "left" | "right", gradientImg?: string 
     {props.gradientImg && props.side === "left" &&
       <img src={props.gradientImg} className="absolute top-[-20px] right-[-150px] md:top-[200px] md:right-[-200px]" />
     }
-    <img className="md:flex-1 rounded drop-shadow-xl min-w-0 max-w-full self-start z-10" src={props.image} />
+    <img className="relative md:flex-1 rounded min-w-0 max-w-full self-start z-10" src={props.image} />
   </div>
 }
 
