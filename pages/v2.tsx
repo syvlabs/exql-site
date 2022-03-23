@@ -12,7 +12,7 @@ const V2: NextPage = () => {
     <div>
       <div className="mx-auto px-8 mt-6 md:mt-10 max-w-7xl select-none">
         <div className="flex items-center">
-          <div className="text-3xl md:text-5xl text-main2-500 font-medium">ExQL</div>
+          <img src="/logo.svg" className="w-40" />
           <div className="flex-1"></div>
           <RequestDemo />
         </div>
@@ -20,44 +20,42 @@ const V2: NextPage = () => {
           <span className="text-main2-500">Manipulate</span> your data warehouse <span className="text-main2-500">with Excel.</span> Bye SQL!
           <motion.div className="ml-1 inline-block wave-emoji" animate={{ rotate: 20 }} transition={{ repeat: Infinity, duration: 0.5, repeatType: 'reverse' }}>👋</motion.div>
         </div>
-        <div className="mt-6 md:mt-8 text-md md:text-xl px-4 md:px-16 mx-auto items-center text-center max-w-3xl tracking-tight leading-loose">
+        <div className="relative mt-6 md:mt-8 text-md md:text-xl px-4 md:px-16 mx-auto items-center text-center max-w-3xl tracking-tight leading-loose z-10">
           Through an Excel-like interface, ExQL enables business analysts to explore, query data, and build SQL data pipelines on top of their data warehouses — without actually writing a line of SQL
         </div>
-        <div className="relative bg-black rounded">
-          <motion.img
-            className="mt-6 md:mt-16 border-2 border-main-300 rounded mx-auto items-center shadow-xl"
+        <div className="relative rounded">
+          <img src="/gradient-hero-left.png" className="absolute top-[-100px] left-[-150px] md:top-[-150px] md:left-[-300px]" />
+          <img src="/gradient-hero-right.png" className="absolute top-[30px] right-[-150px] md:top-[100px] md:right-[-300px]" />
+          <img
+            className="relative mt-6 md:mt-16 rounded mx-auto items-center shadow-xl z-10"
             src="/Collaborative.png"
-            initial={{ opacity: 1 }}
-            whileInView={{ opacity: 0.9 }}
-            viewport={{ margin: "-50%" }}
-            transition={{ duration: 0.3, type: "tween" }}
           />
-          <div className="absolute flex items-center top-0 w-full h-full" onClick={() => setIsModalOpen(true)}>
+          <div className="absolute flex items-center top-0 w-full h-full z-20" onClick={() => setIsModalOpen(true)}>
             <motion.div
-              className="mx-auto flex items-center bg-blackish active:bg-main2-500 drop-shadow-2xl rounded-full p-2"
+              className="mx-auto flex items-center bg-blackish active:bg-main2-500 drop-shadow-2xl rounded-full p-1"
               initial={{ scale: 1 }}
               whileHover={{ scale: 1.3 }}
             >
-              <PlayIcon className="text-white w-16 md:w-24 inline" />
-              <span className="text-white inline text-xl md:text-3xl font-medium mr-5">Watch demo</span>
+              <PlayIcon className="text-white w-12 md:w-16 inline" />
+              <span className="text-white inline text-xl md:text-2xl font-medium ml-2 mr-4">Watch demo</span>
             </motion.div>
           </div>
         </div>
         <div className="h-4 md:h-16"></div>
       </div>
     </div>
-    <div className="pt-12 md:pt-32">
-      <FunctionalFact side="left" title="Analyze your big data in an instant ✨" image="/sheet1.png">
-        <div>Open, explore, and analyze <span className="font-semibold text-main2-600">terabytes</span> of data from your data warehouse in seconds, through an Excel-like interface.</div>
+    <div className="relative pt-12 md:pt-32 z-10">
+      <FunctionalFact side="left" title="Analyze your big data in an instant ✨" image="/product-illus-1.png" gradientImg='/gradient-section1-right.png'>
+        <div>Open, explore, and analyze <span className="font-semibold text-main2-500">terabytes</span> of data from your data warehouse in seconds, through an Excel-like interface.</div>
         <div className="mt-2">Each formula, filter, and pivot table that you do will automatically be converted into SQL queries in the back end.</div>
       </FunctionalFact>
       <div className="h-16 md:h-32"></div>
-      <FunctionalFact side="right" title="Spot fixes for your data, just like Excel 🔧" image="/sheet2.png">
+      <FunctionalFact side="right" title="Spot fixes for your data, just like Excel 🔧" image="/product-illus-2.png">
         <div>Quickly apply spot fixes and overrides to specific data points to accommodate exceptions in your business logic.</div>
         <div className="mt-2">Overrides can go through an approval process — making sure all changes are safe and reversible.</div>
       </FunctionalFact>
       <div className="h-16 md:h-32"></div>
-      <FunctionalFact side="left" title="Edit your DBT data pipelines without SQL 🤯" image="/sheet3.png">
+      <FunctionalFact side="left" title="Edit your DBT data pipelines without SQL 🤯" image="/product-illus-3.png">
         <div>Achieve much faster turnaround times on pipeline change requests with the ability to safely modify the SQL queries in your DBT data pipelines.</div>
       </FunctionalFact>
       <div className="h-16 md:h-32"></div>
@@ -119,7 +117,7 @@ export const RequestDemo: FC<{ inverted?: boolean }> = (props) => {
 
 const LoomModal: FC<{ close: () => void, className?: string }> = (props) => {
   return <motion.div
-    className={`fixed inset-0 bg-glassblack px-2 pt-20 pb-2 md:p-32 ${props.className}`}
+    className={`fixed inset-0 bg-glassblack px-2 pt-20 pb-2 md:p-32 z-40 ${props.className}`}
     onClick={props.close}
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -135,23 +133,29 @@ const LoomModal: FC<{ close: () => void, className?: string }> = (props) => {
   </motion.div>
 }
 
-const FunctionalFact: FC<{ side: "left" | "right", title: string, image: string }> = (props) => {
+const FunctionalFact: FC<{ side: "left" | "right", title: string, image: string, gradientImg?: string }> = (props) => {
   return <motion.div
-    className={`flex ${props.side === "left" ? "flex-col" : "flex-col-reverse"} md:flex-row max-w-7xl px-8 md:px-8 md:pb-16 mx-auto items-center`}
+    className={`flex flex-col ${props.side === "left" ? "md:flex-row" : "md:flex-row-reverse"} max-w-7xl px-8 md:px-8 md:pb-16 mx-auto items-center`}
     initial={{ opacity: 0, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-20%" }}
     transition={{ duration: 0.5, type: "tween" }}
   >
-    {props.side === "right" &&
-      <img className="md:flex-1 rounded shadow-xl min-w-0 max-w-full self-start" src={props.image} />}
-    <div className={`flex-0 md:w-1/3 text-blackish ${props.side === "left" ? "md:mr-16" : "md:ml-16"} mb-4`}>
+    <div className={`flex-0 md:w-1/3 text-blackish ${props.side === "left" ? "md:mr-16" : "md:ml-16"} mb-4 z-10`}>
       <div className="text-3xl md:text-4xl mb-4 font-medium leading-snug">{props.title}</div>
-      <div className="text-md md:text-xl opacity-70 tracking-tight">{props.children}</div>
+      <div className="text-md md:text-xl text-blackishlight tracking-tight">{props.children}</div>
     </div>
-    {props.side === "left" &&
-      <img className="md:flex-1 rounded shadow-xl min-w-0 max-w-full self-start" src={props.image} />}
+    <FFImage image={props.image} side={props.side} gradientImg={props.gradientImg} />
   </motion.div>
+}
+
+const FFImage: FC<{ image: string, side: "left" | "right", gradientImg?: string }> = (props) => {
+  return <div className="relative">
+    {props.gradientImg && props.side === "left" &&
+      <img src={props.gradientImg} className="absolute top-[-20px] right-[-150px] md:top-[200px] md:right-[-200px]" />
+    }
+    <img className="md:flex-1 rounded drop-shadow-xl min-w-0 max-w-full self-start z-10" src={props.image} />
+  </div>
 }
 
 const NonFunctionalFact: FC<{ title: string, index: number, icon: string }> = (props) => {

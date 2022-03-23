@@ -28,6 +28,7 @@ module.exports = {
           900: '#01271c',
         },
         blackish: '#1D2947',
+        blackishlight: '#61697E',
         tmorange: '#F3A258',
         tmred: {
           og: '#EF4631',

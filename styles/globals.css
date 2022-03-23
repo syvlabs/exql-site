@@ -85,3 +85,10 @@
 .wave-emoji {
   transform-origin: 80% 80%;
 }
+
+html, body {
+  overflow-x: hidden;
+}
+body {
+  position: relative
+}
