@@ -10,9 +10,11 @@ const Home: NextPage = () => {
   return <>
     <Head><title>ExQL: Spreadsheets for Data Warehouses</title></Head>
     <div className="bg-gradient-to-t from-main-200">
+      <!--
       <div className="bg-tmred-dark px-4 text-md md:text-lg text-white py-2 text-center">
-        🚫🚀 Unlike everyone else, we have NOT raised any funding, please <a className="underline" href="mailto:exql@googlegroups.com">email us</a> if you want in!
+        🚫🚀 Unlike everyone else, we have not yet raised any funding. Please <a className="underline" href="mailto:exql@googlegroups.com">email us</a> if you want in!
       </div>
+      -->
       <div className="mx-auto px-8 mt-4 md:mt-10 max-w-7xl select-none">
         <div className="flex items-center">
           <div className="text-3xl md:text-5xl text-main-600 font-medium">ExQL</div>
