@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import { ArrowLeftIcon } from '@heroicons/react/solid'
 import Head from 'next/head'
-import { RequestDemo } from './v2'
+import { RequestDemo } from '.'
 import Link from 'next/link'
 import HeadCommon from './components/HeadCommon'
 

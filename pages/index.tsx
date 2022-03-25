@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { PlayIcon, XIcon } from '@heroicons/react/solid'
 import { motion } from "framer-motion"
 import Head from 'next/head'
@@ -7,6 +7,10 @@ import HeadCommon from './components/HeadCommon'
 
 const V2: NextPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
+
+  useEffect(() => {
+    document.documentElement.style.overflow = isModalOpen ? "hidden" : "auto"
+  }, [isModalOpen])
 
   return <div className="bg-white font-sansv2 text-blackish tracking-tighter">
     <Head>
