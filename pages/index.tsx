@@ -134,7 +134,7 @@ const LoomModal: FC<{ close: () => void, className?: string }> = (props) => {
   >
     <XIcon className="fixed w-16 h-16 top-2 right-2 drop-shadow-xl text-white hover:text-main2-200 active:text-main2-500" onClick={props.close} />
     <iframe
-      src="https://www.loom.com/embed/c4f474d6b31f40ea80e95c3df8f41f93"
+      src="https://www.loom.com/embed/49c928bc507d4aea94f9df872e2c6b9e"
       frameBorder="0"
       allowFullScreen={true}
       className="w-full h-full"
