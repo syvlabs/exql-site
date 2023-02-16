@@ -23,7 +23,7 @@ const Home: NextPage = () => {
         <img src="/gradient-hero-left.png" className="fixed top-[-100px] left-[-150px] md:top-[-50px] md:left-[-300px]" />
         <img src="/gradient-hero-right.png" className="fixed top-[30px] right-[-150px] md:top-[100px] md:right-[-300px] max-h-screen" />
         <iframe
-          src="https://www.loom.com/embed/c4f474d6b31f40ea80e95c3df8f41f93"
+          src="https://www.loom.com/embed/49c928bc507d4aea94f9df872e2c6b9e"
           frameBorder="0"
           allowFullScreen={true}
           className="relative w-full h-full z-10"
