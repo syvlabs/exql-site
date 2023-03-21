@@ -29,7 +29,9 @@ const V2: NextPage = () => {
           <motion.div className="ml-1 inline-block wave-emoji" animate={{ rotate: 20 }} transition={{ repeat: Infinity, duration: 0.5, repeatType: 'reverse' }}>👋</motion.div>
         </div>
         <div className="relative mt-6 md:mt-8 text-md md:text-xl px-4 md:px-16 mx-auto items-center text-center max-w-3xl tracking-tight leading-loose z-10">
-          Through an Excel-like interface, ExQL enables business analysts to explore, query data, and build SQL data pipelines on top of their data warehouses — without actually writing a line of SQL
+          Through an Excel-like interface, ExQL enables business analysts to explore, query data, and build SQL data pipelines on top of their data warehouses — without actually writing a line of SQL. <br/><br/>
+
+          Questions or comments? Contact us at <a href="mailto:hello@exql.app" className="text-blue-400">hello@exql.app</a>.
         </div>
         <div className="relative rounded">
           <img src="/gradient-hero-left.png" className="absolute top-[-100px] left-[-150px] md:top-[-150px] md:left-[-300px]" />
