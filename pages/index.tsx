@@ -120,7 +120,7 @@ export const RequestDemo: FC<{ inverted?: boolean }> = (props) => {
   const bgNormalColor = props.inverted ? "bg-white" : "bg-main2-500"
   const bgHoverColor = props.inverted ? "bg-main2-700" : "bg-main2-600"
   const bgActiveColor = props.inverted ? "bg-main2-900" : "bg-main2-700"
-  return <a href="https://cal.com/exql-demo/schedule" target="_blank" rel="noreferrer">
+  return <a href="https://calendly.com/exql/30min" target="_blank" rel="noreferrer">
     <div className={`flex w-32 md:w-36 h-10 md:h-12 items-center text-sm md:text-md font-medium rounded select-none cursor-pointer tracking-normal ${textNormalColor} hover:${textHoverColor} ${bgNormalColor} hover:${bgHoverColor} active:${bgActiveColor}`}>
       <span className="mx-auto">Request a demo</span>
     </div>
