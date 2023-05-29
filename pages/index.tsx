@@ -55,18 +55,19 @@ const V2: NextPage = () => {
       </div>
     </div>
     <div className="relative pt-12 md:pt-32 z-10">
-      <FunctionalFact side="left" title="Analyze your big data in an instant ✨" image="/product-illus-1.png" gradientImg='/gradient-section1-right.png'>
-        <div>Open, explore, and analyze <span className="font-semibold text-main2-500">terabytes</span> of data from your data warehouse in seconds, through an Excel-like interface.</div>
-        <div className="mt-2">Each formula, filter, and pivot table that you do will automatically be converted into SQL queries in the back end.</div>
+      <FunctionalFact side="left" title="Work with your data your way." image="/product-illus-1.png" gradientImg='/gradient-section1-right.png'>
+        <div>Explore <span className="font-semibold text-main2-500">terabytes</span> of data on a familiar spreadsheet, with all your favorite keyboard shortcuts.</div>
+        <div className="mt-2">Use Excel formulas to work with your data. Make spot edits by editing a cell&apos;s value. We&apos;ll convert it all to SQL for you!</div>
       </FunctionalFact>
       <div className="h-16 md:h-32"></div>
-      <FunctionalFact side="right" title="Spot fixes for your data, just like Excel 🔧" image="/product-illus-2.png">
-        <div>Quickly apply spot fixes and overrides to specific data points to accommodate exceptions in your business logic.</div>
-        <div className="mt-2">Overrides can go through an approval process — making sure all changes are safe and reversible.</div>
+      <FunctionalFact side="right" title="Get exactly the data you need." image="/product-illus-2.png">
+        <div>Our GPT-powered assistant sifts through your tables and columns to find the datasets you&apos;re looking for.</div>
+        <div className="mt-2">Verify AI-generated calculations by reviewing Excel formulas. Update table joins by editing a VLOOKUP or INDEX-MATCH function.</div>
       </FunctionalFact>
       <div className="h-16 md:h-32"></div>
-      <FunctionalFact side="left" title="Edit your DBT data pipelines without SQL 🤯" image="/product-illus-3.png">
-        <div>Achieve much faster turnaround times on pipeline change requests with the ability to safely modify the SQL queries in your DBT data pipelines.</div>
+      <FunctionalFact side="left" title="Analyze data in the right format." image="/product-illus-3.png">
+        <div>Summarize <span className="font-semibold text-main2-500">terabytes</span> of data on intuitive pivot tables, or get our AI assistant to do it for you! </div>
+        <div className="mt-2">Create visualizations that become automatically updating dashboards, and export charts into presentations or reports.</div>
       </FunctionalFact>
       <div className="h-16 md:h-32"></div>
     </div>
