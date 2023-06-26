@@ -33,7 +33,7 @@ const V2: NextPage = () => {
       </div>
     </div>
     
-    <div className="h-4 md:h-24"></div>
+    <div className="h-20 md:h-24"></div>
 
     <VideoFunctionalFact
       side="left"
@@ -43,7 +43,7 @@ const V2: NextPage = () => {
       ExQL searches through your data warehouse tables to <b>find the right fields</b>, <b>join different tables</b>, and present your requested data on a <b>spreadsheet or pivot table</b>.
     </VideoFunctionalFact>
 
-    <div className="h-4 md:h-24"></div>
+    <div className="h-20 md:h-24"></div>
 
     <VideoFunctionalFact
       side="right"
@@ -53,7 +53,7 @@ const V2: NextPage = () => {
       All data transforms, joins, and calculations are done using the <b>Excel or Google Sheets formulas</b> you know and love. <b>Edit anything</b> on the sheet, and we <b>convert it to SQL</b> for you behind the scenes.
     </VideoFunctionalFact>
 
-    <div className="h-4 md:h-24"></div>
+    <div className="h-20 md:h-24"></div>
 
     <VideoFunctionalFact
       side="left"
@@ -63,7 +63,7 @@ const V2: NextPage = () => {
       Ask the Virtual Analyst to <b>turn your dataset into a chart</b>, or build it yourself. All charts <b>update as your data warehouse does</b> in our spreadsheet-based dashboard builder.
     </VideoFunctionalFact>
 
-    <div className="h-4 md:h-24"></div>
+    <div className="h-20 md:h-24"></div>
 
     <VideoFunctionalFact
       side="right"
