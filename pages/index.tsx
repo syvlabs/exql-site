@@ -38,7 +38,7 @@ const V2: NextPage = () => {
     <VideoFunctionalFact
       side="left"
       title={<>Describe your <span className="font-semibold text-main2-500">desired dataset</span>, and we&apos;ll put it on a <span className="font-semibold text-main2-500">spreadsheet</span>.</>}
-      embedUrl="https://player.vimeo.com/video/839734699?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1"
+      embedUrl="https://player.vimeo.com/video/839734699?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1"
     >
       ExQL searches through your data warehouse tables to <b>find the right fields</b>, <b>join different tables</b>, and present your requested data on a <b>spreadsheet or pivot table</b>.
     </VideoFunctionalFact>
@@ -48,7 +48,7 @@ const V2: NextPage = () => {
     <VideoFunctionalFact
       side="right"
       title={<><span className="font-semibold text-main2-500">Verify data extracts</span> using familiar <span className="font-semibold text-main2-500">spreadsheet formulas</span>.</>}
-      embedUrl="https://player.vimeo.com/video/839734602?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1"
+      embedUrl="https://player.vimeo.com/video/839734602?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1"
     >
       All data transforms, joins, and calculations are done using the <b>Excel or Google Sheets formulas</b> you know and love. <b>Edit anything</b> on the sheet, and we <b>convert it to SQL</b> for you behind the scenes.
     </VideoFunctionalFact>
@@ -58,7 +58,7 @@ const V2: NextPage = () => {
     <VideoFunctionalFact
       side="left"
       title={<><span className="font-semibold text-main2-500">Create dashboards instantly</span>, with charts that <span className="font-semibold text-main2-500">update with your data</span>.</>}
-      embedUrl="https://player.vimeo.com/video/839733703?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1"
+      embedUrl="https://player.vimeo.com/video/839733703?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1"
     >
       Ask the Virtual Analyst to <b>turn your dataset into a chart</b>, or build it yourself. All charts <b>update as your data warehouse does</b> in our spreadsheet-based dashboard builder.
     </VideoFunctionalFact>
@@ -68,7 +68,7 @@ const V2: NextPage = () => {
     <VideoFunctionalFact
       side="right"
       title={<><span className="font-semibold text-main2-500">Save any edits</span> or newly <span className="font-semibold text-main2-500">created tables</span> into your <span className="font-semibold text-main2-500">data warehouse</span>.</>}
-      embedUrl="https://player.vimeo.com/video/839725031?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1"
+      embedUrl="https://player.vimeo.com/video/839725031?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1"
     >
       <b>Spotted an error</b> in the data source? <b>Edit the cell directly</b> and create an <b>updated view</b> in the data warehouse. Generated a <b>new, important table</b>? <b>Upload it</b> with one click.
     </VideoFunctionalFact>
