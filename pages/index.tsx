@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import { FC, ReactElement, useEffect, useState } from 'react'
-import { PlayIcon, XIcon } from '@heroicons/react/solid'
+import { XIcon } from '@heroicons/react/solid'
+import { MailIcon } from '@heroicons/react/outline'
 import { motion } from "framer-motion"
 import Head from 'next/head'
 import HeadCommon from './components/HeadCommon'
@@ -22,6 +23,12 @@ const V2: NextPage = () => {
         <div className="flex items-center">
           <img src="/logo.svg" className="w-32 md:w-40" />
           <div className="flex-1"></div>
+          <div className="items-center mr-8 select-text">
+            <a className="flex items-center hover:text-main2-500 active:text-main2-900" href="mailto:hello@exql.app">
+              <MailIcon className="w-6 h-6 mr-1" />
+              hello@exql.app
+            </a>
+          </div>
           <RequestDemo />
         </div>
         <div className="mt-12 md:mt-20 mx-auto text-4xl md:text-5xl items-center text-center font-semibold max-w-3xl md:leading-normal">
@@ -32,7 +39,7 @@ const V2: NextPage = () => {
         </div>
       </div>
     </div>
-    
+
     <div className="h-20 md:h-24"></div>
 
     <VideoFunctionalFact
@@ -105,7 +112,7 @@ const V2: NextPage = () => {
       </div>
       <div className="flex mx-auto px-8 max-w-7xl select-none">
         <div className="mt-8">
-          <div className="text-xl text-main-900 font-medium mb-1">Questions? Email us at <a href="mailto:hello@exql.app" className="text-blue-400">hello@exql.app</a>.</div>
+          <div className="text-xl text-main-900 font-medium mb-1">Questions? Email us at <a href="mailto:hello@exql.app" className="text-main2-500 hover:underline active:text-main2-900">hello@exql.app</a>.</div>
         </div>
       </div>
     </div>
