@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { FC, useEffect, useState } from 'react'
+import { FC, ReactElement, useEffect, useState } from 'react'
 import { PlayIcon, XIcon } from '@heroicons/react/solid'
 import { motion } from "framer-motion"
 import Head from 'next/head'
@@ -25,54 +25,54 @@ const V2: NextPage = () => {
           <RequestDemo />
         </div>
         <div className="mt-12 md:mt-20 mx-auto text-4xl md:text-5xl items-center text-center font-semibold max-w-3xl md:leading-normal">
-          <span className="text-main2-500">AI-powered data pulls</span>. <br/>No <span className="text-main2-500">searching</span>, no <span className="text-main2-500">SQL</span>, no <span className="text-main2-500">stress</span>!
+          <span className="text-main2-500">AI-powered data pulls</span>. <br />No <span className="text-main2-500">searching</span>, no <span className="text-main2-500">SQL</span>, no <span className="text-main2-500">stress</span>!
         </div>
         <div className="relative mt-6 md:mt-8 text-md md:text-xl px-4 md:px-16 mx-auto items-center text-center max-w-5xl tracking-tight leading-loose z-10">
           Our <b>Generative AI</b>-powered Virtual Analyst explores your <b>data warehouse</b> and <b>securely pulls</b> the data you need. <b>Verify the data</b> using familiar <b>spreadsheet formulas</b>.
         </div>
       </div>
     </div>
-    <div className="h-4 md:h-48"></div>
+    
+    <div className="h-4 md:h-24"></div>
 
-    <div className={"flex flex-col md:flex-row max-w-7xl px-8 md:px-8 md:pb-16 mx-auto items-center"}> 
-      <div className={"flex-0 md:w-2/5 text-blackish md:mr-16 mb-4 z-10"}>
-        <div className="text-3xl md:text-4xl mb-4 font-medium leading-snug">Describe your <span className="font-semibold text-main2-500">desired dataset</span>, and we&apos;ll put it on a <span className="font-semibold text-main2-500">spreadsheet</span>.</div>
-        <div className="text-md md:text-xl text-blackishlight tracking-tight">ExQL searches through your data warehouse tables to <b>find the right fields</b>, <b>join different tables</b>, and present your requested data on a <b>spreadsheet or pivot table</b>.</div>
-        <div className="absolute top-[535px] right-[50px]">
-          <div><iframe className="ratio ratio-16x9" width="700" height="393" src="https://www.youtube.com/embed/JyRW9uq7tqE?controls=0&autoplay=1&loop=1&mute=1&rel=0&playlist=JyRW9uq7tqE" title="YouTube video player" frameBorder="0" allow="autoplay"></iframe></div>
-        </div>
-      </div>
-    </div>
-    <div className="h-4 md:h-48"></div>
-    <div className={"flex flex-col md:flex-row-reverse max-w-7xl px-8 md:px-8 md:pb-16 mx-auto items-center"}> 
-      <div className={"flex-0 md:w-2/5 text-blackish md:ml-16 mb-4 z-10"}>
-        <div className="text-3xl md:text-4xl mb-4 font-medium leading-snug"><span className="font-semibold text-main2-500">Verify data extracts</span> using familiar <span className="font-semibold text-main2-500">spreadsheet formulas</span>.</div>
-        <div className="text-md md:text-xl text-blackishlight tracking-tight">All data transforms, joins, and calculations are done using the <b>Excel or Google Sheets formulas</b> you know and love. <b>Edit anything</b> on the sheet, and we <b>convert it to SQL</b> for you behind the scenes.</div>
-        <div className="absolute top-[1050px] right-[560px]">
-          <div><iframe className="ratio ratio-16x9" width="700" height="393" src="https://www.youtube.com/embed/6hkqGhuwZNk?controls=0&autoplay=1&loop=1&mute=1&rel=0&playlist=6hkqGhuwZNk" title="YouTube video player" frameBorder="0" allow="autoplay"></iframe></div>
-        </div>
-      </div>
-    </div>
-    <div className="h-4 md:h-48"></div>
-    <div className={"flex flex-col md:flex-row max-w-7xl px-8 md:px-8 md:pb-16 mx-auto items-center"}> 
-      <div className={"flex-0 md:w-2/5 text-blackish md:mr-16 mb-4 z-10"}>
-        <div className="text-3xl md:text-4xl mb-4 font-medium leading-snug"><span className="font-semibold text-main2-500">Create dashboards instantly</span>, with charts that <span className="font-semibold text-main2-500">update with your data</span>.</div>
-        <div className="text-md md:text-xl text-blackishlight tracking-tight">Ask the Virtual Analyst to <b>turn your dataset into a chart</b>, or build it yourself. All charts <b>update as your data warehouse does</b> in our spreadsheet-based dashboard builder.</div>
-        <div className="absolute top-[1565px] right-[50px]">
-          <div><iframe className="ratio ratio-16x9" width="700" height="393" src="https://www.youtube.com/embed/hvtaWdOjXFU?controls=0&autoplay=1&loop=1&mute=1&rel=0&playlist=hvtaWdOjXFU" title="YouTube video player" frameBorder="0" allow="autoplay"></iframe></div>
-        </div>
-      </div>
-    </div>
-    <div className="h-4 md:h-48"></div>
-    <div className={"flex flex-col md:flex-row-reverse max-w-7xl px-8 md:px-8 md:pb-16 mx-auto items-center"}> 
-      <div className={"flex-0 md:w-2/5 text-blackish md:ml-16 mb-4 z-10"}>
-        <div className="text-3xl md:text-4xl mb-4 font-medium leading-snug"><span className="font-semibold text-main2-500">Save any edits</span> or newly <span className="font-semibold text-main2-500">created tables</span> into your <span className="font-semibold text-main2-500">data warehouse</span>.</div>
-        <div className="text-md md:text-xl text-blackishlight tracking-tight"><b>Spotted an error</b> in the data source? <b>Edit the cell directly</b> and create an <b>updated view</b> in the data warehouse. Generated a <b>new, important table</b>? <b>Upload it</b> with one click.</div>
-        <div className="absolute top-[2080px] right-[560px]">
-          <div><iframe className="ratio ratio-16x9" width="700" height="393" src="https://www.youtube.com/embed/z5qDFuXbK94?controls=0&autoplay=1&loop=1&mute=1&rel=0&playlist=z5qDFuXbK94" title="YouTube video player" frameBorder="0" allow="autoplay"></iframe></div>
-        </div>
-      </div>
-    </div>
+    <VideoFunctionalFact
+      side="left"
+      title={<>Describe your <span className="font-semibold text-main2-500">desired dataset</span>, and we&apos;ll put it on a <span className="font-semibold text-main2-500">spreadsheet</span>.</>}
+      embedUrl="https://player.vimeo.com/video/839734699?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1"
+    >
+      ExQL searches through your data warehouse tables to <b>find the right fields</b>, <b>join different tables</b>, and present your requested data on a <b>spreadsheet or pivot table</b>.
+    </VideoFunctionalFact>
+
+    <div className="h-4 md:h-24"></div>
+
+    <VideoFunctionalFact
+      side="right"
+      title={<><span className="font-semibold text-main2-500">Verify data extracts</span> using familiar <span className="font-semibold text-main2-500">spreadsheet formulas</span>.</>}
+      embedUrl="https://player.vimeo.com/video/839734602?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1"
+    >
+      All data transforms, joins, and calculations are done using the <b>Excel or Google Sheets formulas</b> you know and love. <b>Edit anything</b> on the sheet, and we <b>convert it to SQL</b> for you behind the scenes.
+    </VideoFunctionalFact>
+
+    <div className="h-4 md:h-24"></div>
+
+    <VideoFunctionalFact
+      side="left"
+      title={<><span className="font-semibold text-main2-500">Create dashboards instantly</span>, with charts that <span className="font-semibold text-main2-500">update with your data</span>.</>}
+      embedUrl="https://player.vimeo.com/video/839733703?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1"
+    >
+      Ask the Virtual Analyst to <b>turn your dataset into a chart</b>, or build it yourself. All charts <b>update as your data warehouse does</b> in our spreadsheet-based dashboard builder.
+    </VideoFunctionalFact>
+
+    <div className="h-4 md:h-24"></div>
+
+    <VideoFunctionalFact
+      side="right"
+      title={<><span className="font-semibold text-main2-500">Save any edits</span> or newly <span className="font-semibold text-main2-500">created tables</span> into your <span className="font-semibold text-main2-500">data warehouse</span>.</>}
+      embedUrl="https://player.vimeo.com/video/839725031?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1"
+    >
+      <b>Spotted an error</b> in the data source? <b>Edit the cell directly</b> and create an <b>updated view</b> in the data warehouse. Generated a <b>new, important table</b>? <b>Upload it</b> with one click.
+    </VideoFunctionalFact>
+
     <div className="bg-neutral-50">
       <div className="pt-16 md:pt-24 mx-auto max-w-7xl px-8">
         <div className="text-4xl md:text-5xl text-left mb-8 md:mb-20 font-medium tracking-tight">
@@ -159,6 +159,24 @@ const FunctionalFact: FC<{ side: "left" | "right", title: string, image: string,
       <div className="text-md md:text-xl text-blackishlight tracking-tight">{props.children}</div>
     </div>
     <FFImage image={props.image} side={props.side} gradientImg={props.gradientImg} />
+  </motion.div>
+}
+
+const VideoFunctionalFact: FC<{ side: "left" | "right", title: ReactElement, embedUrl: string }> = (props) => {
+  return <motion.div
+    className={`flex flex-col ${props.side === "left" ? "md:flex-row" : "md:flex-row-reverse"} max-w-7xl px-8 md:px-8 md:pb-16 mx-auto items-center`}
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-20%" }}
+    transition={{ duration: 0.5, type: "tween" }}
+  >
+    <div className={`flex-0 md:w-1/3 text-blackish ${props.side === "left" ? "md:mr-16" : "md:ml-16"} mb-4 z-10`}>
+      <div className="text-3xl md:text-4xl mb-4 font-medium leading-snug">{props.title}</div>
+      <div className="text-md md:text-xl text-blackishlight tracking-tight">{props.children}</div>
+    </div>
+    <iframe
+      className="block md:flex-1 rounded w-full min-w-0 max-w-full self-start z-10 aspect-video video-clip"
+      src={props.embedUrl} title="Demo video" frameBorder="0" allow="autoplay"></iframe>
   </motion.div>
 }
 

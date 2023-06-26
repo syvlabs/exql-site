@@ -92,3 +92,7 @@ html, body {
 body {
   position: relative
 }
+
+.video-clip {
+  clip-path: inset(1px 1px);
+}
