@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
-import { FC, useEffect, useState } from 'react'
-import { PlayIcon, XIcon } from '@heroicons/react/solid'
+import { FC, ReactElement, useEffect, useState } from 'react'
+import { XIcon } from '@heroicons/react/solid'
+import { MailIcon } from '@heroicons/react/outline'
 import { motion } from "framer-motion"
 import Head from 'next/head'
 import HeadCommon from './components/HeadCommon'
@@ -22,65 +23,74 @@ const V2: NextPage = () => {
         <div className="flex items-center">
           <img src="/logo.svg" className="w-32 md:w-40" />
           <div className="flex-1"></div>
+          <div className="items-center mr-8 select-text">
+            <a className="flex items-center hover:text-main2-500 active:text-main2-900" href="mailto:hello@exql.app">
+              <MailIcon className="w-6 h-6 mr-1" />
+              hello@exql.app
+            </a>
+          </div>
           <RequestDemo />
         </div>
         <div className="mt-12 md:mt-20 mx-auto text-4xl md:text-5xl items-center text-center font-semibold max-w-3xl md:leading-normal">
-          <span className="text-main2-500">Manipulate</span> your data warehouse <span className="text-main2-500">with Excel.</span> Bye SQL!
-          <motion.div className="ml-1 inline-block wave-emoji" animate={{ rotate: 20 }} transition={{ repeat: Infinity, duration: 0.5, repeatType: 'reverse' }}>👋</motion.div>
+          <span className="text-main2-500">AI-powered data pulls</span>. <br />No <span className="text-main2-500">searching</span>, no <span className="text-main2-500">SQL</span>, no <span className="text-main2-500">stress</span>!
         </div>
-        <div className="relative mt-6 md:mt-8 text-md md:text-xl px-4 md:px-16 mx-auto items-center text-center max-w-3xl tracking-tight leading-loose z-10">
-          Through an Excel-like interface, ExQL enables business analysts to explore, query data, and build SQL data pipelines on top of their data warehouses — without actually writing a line of SQL. <br/><br/>
-
-          Questions or comments? Contact us at <a href="mailto:hello@exql.app" className="text-blue-400">hello@exql.app</a>.
+        <div className="relative mt-6 md:mt-8 text-md md:text-xl px-4 md:px-16 mx-auto items-center text-center max-w-5xl tracking-tight leading-loose z-10">
+          Our <b>Generative AI</b>-powered Virtual Analyst explores your <b>data warehouse</b> and <b>securely pulls</b> the data you need. <b>Verify the data</b> using familiar <b>spreadsheet formulas</b>.
         </div>
-        <div className="relative rounded">
-          <img src="/gradient-hero-left.png" className="absolute top-[-100px] left-[-150px] md:top-[-150px] md:left-[-300px]" />
-          <img src="/gradient-hero-right.png" className="absolute top-[30px] right-[-150px] md:top-[100px] md:right-[-300px]" />
-          <img
-            className="relative mt-6 md:mt-16 rounded mx-auto items-center shadow-xl z-10"
-            src="/Collaborative.png"
-          />
-          <div className="absolute flex items-center top-0 w-full h-full z-20" onClick={() => setIsModalOpen(true)}>
-            <motion.div
-              className="mx-auto flex items-center bg-blackish active:bg-main2-500 rounded-full p-1"
-              initial={{ scale: 1 }}
-              whileHover={{ scale: 1.3 }}
-            >
-              <PlayIcon className="text-white w-12 md:w-16 inline" />
-              <span className="text-white inline text-xl md:text-2xl font-medium ml-2 mr-4 tracking-tight">Watch demo</span>
-            </motion.div>
-          </div>
-        </div>
-        <div className="h-4 md:h-16"></div>
       </div>
     </div>
-    <div className="relative pt-12 md:pt-32 z-10">
-      <FunctionalFact side="left" title="Analyze your big data in an instant ✨" image="/product-illus-1.png" gradientImg='/gradient-section1-right.png'>
-        <div>Open, explore, and analyze <span className="font-semibold text-main2-500">terabytes</span> of data from your data warehouse in seconds, through an Excel-like interface.</div>
-        <div className="mt-2">Each formula, filter, and pivot table that you do will automatically be converted into SQL queries in the back end.</div>
-      </FunctionalFact>
-      <div className="h-16 md:h-32"></div>
-      <FunctionalFact side="right" title="Spot fixes for your data, just like Excel 🔧" image="/product-illus-2.png">
-        <div>Quickly apply spot fixes and overrides to specific data points to accommodate exceptions in your business logic.</div>
-        <div className="mt-2">Overrides can go through an approval process — making sure all changes are safe and reversible.</div>
-      </FunctionalFact>
-      <div className="h-16 md:h-32"></div>
-      <FunctionalFact side="left" title="Edit your DBT data pipelines without SQL 🤯" image="/product-illus-3.png">
-        <div>Achieve much faster turnaround times on pipeline change requests with the ability to safely modify the SQL queries in your DBT data pipelines.</div>
-      </FunctionalFact>
-      <div className="h-16 md:h-32"></div>
-    </div>
+
+    <div className="h-20 md:h-24"></div>
+
+    <VideoFunctionalFact
+      side="left"
+      title={<>Describe your <span className="font-semibold text-main2-500">desired dataset</span>, and we&apos;ll put it on a <span className="font-semibold text-main2-500">spreadsheet</span>.</>}
+      embedUrl="https://player.vimeo.com/video/839734699?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1"
+    >
+      ExQL searches through your data warehouse tables to <b>find the right fields</b>, <b>join different tables</b>, and present your requested data on a <b>spreadsheet or pivot table</b>.
+    </VideoFunctionalFact>
+
+    <div className="h-20 md:h-24"></div>
+
+    <VideoFunctionalFact
+      side="right"
+      title={<><span className="font-semibold text-main2-500">Verify data extracts</span> using familiar <span className="font-semibold text-main2-500">spreadsheet formulas</span>.</>}
+      embedUrl="https://player.vimeo.com/video/839734602?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1"
+    >
+      All data transforms, joins, and calculations are done using the <b>Excel or Google Sheets formulas</b> you know and love. <b>Edit anything</b> on the sheet, and we <b>convert it to SQL</b> for you behind the scenes.
+    </VideoFunctionalFact>
+
+    <div className="h-20 md:h-24"></div>
+
+    <VideoFunctionalFact
+      side="left"
+      title={<><span className="font-semibold text-main2-500">Create dashboards instantly</span>, with charts that <span className="font-semibold text-main2-500">update with your data</span>.</>}
+      embedUrl="https://player.vimeo.com/video/839733703?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1"
+    >
+      Ask the Virtual Analyst to <b>turn your dataset into a chart</b>, or build it yourself. All charts <b>update as your data warehouse does</b> in our spreadsheet-based dashboard builder.
+    </VideoFunctionalFact>
+
+    <div className="h-20 md:h-24"></div>
+
+    <VideoFunctionalFact
+      side="right"
+      title={<><span className="font-semibold text-main2-500">Save any edits</span> or newly <span className="font-semibold text-main2-500">created tables</span> into your <span className="font-semibold text-main2-500">data warehouse</span>.</>}
+      embedUrl="https://player.vimeo.com/video/839725031?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1"
+    >
+      <b>Spotted an error</b> in the data source? <b>Edit the cell directly</b> and create an <b>updated view</b> in the data warehouse. Generated a <b>new, important table</b>? <b>Upload it</b> with one click.
+    </VideoFunctionalFact>
+
     <div className="bg-neutral-50">
       <div className="pt-16 md:pt-24 mx-auto max-w-7xl px-8">
         <div className="text-4xl md:text-5xl text-left mb-8 md:mb-20 font-medium tracking-tight">
-          <div className="text-main2-500 mb-2">ExQL</div><div>makes it easy</div>
+          <div className="text-main2-500 mb-2">ExQL</div><div>makes Generative AI enterprise-ready.</div>
         </div>
         <div className="flex flex-col md:flex-row md:pb-24">
           <NonFunctionalFact index={0} icon="/icons/icon2.svg" title="Built for the Enterprise">
-            ExQL was built from the ground up with Enterprise users in mind. Compliance certificates coming soon!
+            ExQL optimizes analytics workflows for enterprise users.
           </NonFunctionalFact>
           <NonFunctionalFact index={1} icon="/icons/icon1.svg" title="Open and Integrated">
-            ExQL is fully integrated with DBT and the Modern Data Stack, and is designed to work with all the modern data warehouses.
+            ExQL is integrated with the Modern Data Stack and works with all modern data warehouses.
           </NonFunctionalFact>
           <NonFunctionalFact index={2} icon="/icons/icon3.svg" title="Hands-on Customer Service">
             Our hands-on enterprise support team will assist you through the whole data lifecycle — from ideation to implementation and support.
@@ -93,8 +103,7 @@ const V2: NextPage = () => {
         <div className="py-8 md:py-12 rounded-xl select-none bg-main2-500 shadow-xl">
           <div className="flex flex-col md:flex-row mx-auto max-w-6xl px-8 items-center">
             <div className="flex flex-1 text-3xl md:text-4xl text-white items-center font-semibold mb-4 md:mb-0">
-              Ready for ExQL?
-            </div>
+              Ready to experience Generative AI-powered analysis?</div>
             <div className="flex items-center">
               <RequestDemo inverted={true} />
             </div>
@@ -103,8 +112,7 @@ const V2: NextPage = () => {
       </div>
       <div className="flex mx-auto px-8 max-w-7xl select-none">
         <div className="mt-8">
-          <div className="text-3xl text-main-900 font-medium mb-1">ExQL</div>
-          <div className="text-sm text-main-900">2022 ExQL (© coming soon)</div>
+          <div className="text-xl text-main-900 font-medium mb-1">Questions? Email us at <a href="mailto:hello@exql.app" className="text-main2-500 hover:underline active:text-main2-900">hello@exql.app</a>.</div>
         </div>
       </div>
     </div>
@@ -158,6 +166,24 @@ const FunctionalFact: FC<{ side: "left" | "right", title: string, image: string,
       <div className="text-md md:text-xl text-blackishlight tracking-tight">{props.children}</div>
     </div>
     <FFImage image={props.image} side={props.side} gradientImg={props.gradientImg} />
+  </motion.div>
+}
+
+const VideoFunctionalFact: FC<{ side: "left" | "right", title: ReactElement, embedUrl: string }> = (props) => {
+  return <motion.div
+    className={`flex flex-col ${props.side === "left" ? "md:flex-row" : "md:flex-row-reverse"} max-w-7xl px-8 md:px-8 md:pb-16 mx-auto items-center`}
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-20%" }}
+    transition={{ duration: 0.5, type: "tween" }}
+  >
+    <div className={`flex-0 md:w-1/3 text-blackish ${props.side === "left" ? "md:mr-16" : "md:ml-16"} mb-4 z-10`}>
+      <div className="text-3xl md:text-4xl mb-4 font-medium leading-snug">{props.title}</div>
+      <div className="text-md md:text-xl text-blackishlight tracking-tight">{props.children}</div>
+    </div>
+    <iframe
+      className="block md:flex-1 rounded w-full min-w-0 max-w-full self-start z-10 aspect-video video-clip"
+      src={props.embedUrl} title="Demo video" frameBorder="0" allow="autoplay"></iframe>
   </motion.div>
 }
 
