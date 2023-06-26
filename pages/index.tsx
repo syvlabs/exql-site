@@ -23,13 +23,15 @@ const V2: NextPage = () => {
         <div className="flex items-center">
           <img src="/logo.svg" className="w-32 md:w-40" />
           <div className="flex-1"></div>
-          <div className="items-center mr-8 select-text">
-            <a className="flex items-center hover:text-main2-500 active:text-main2-900" href="mailto:hello@exql.app">
-              <MailIcon className="w-6 h-6 mr-1" />
-              hello@exql.app
-            </a>
+          <div className="flex-0 flex flex-col-reverse md:flex-row items-center">
+            <div className="flex w-32 md:w-36 h-10 md:h-12 items-center justify-center rounded text-white bg-blackish hover:bg-main2-800 active:bg-main2-700 md:bg-white md:hover:bg-white md:active:bg-white md:text-blackish md:hover:underline md:active:text-main2-500 mt-2 md:mt-0 md:mr-5 cursor-pointer">
+              <a className="flex items-center font-medium tracking-normal text-sm md:text-md" href="mailto:hello@exql.app">
+                <MailIcon className="w-5 h-5 mr-1 hidden md:block" />
+                hello@exql.app
+              </a>
+            </div>
+            <RequestDemo />
           </div>
-          <RequestDemo />
         </div>
         <div className="mt-12 md:mt-20 mx-auto text-4xl md:text-5xl items-center text-center font-semibold max-w-3xl md:leading-normal">
           <span className="text-main2-500">AI-powered data pulls</span>. <br />No <span className="text-main2-500">searching</span>, no <span className="text-main2-500">SQL</span>, no <span className="text-main2-500">stress</span>!
