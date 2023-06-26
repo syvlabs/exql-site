@@ -80,6 +80,7 @@ const V2: NextPage = () => {
       embedUrl="https://player.vimeo.com/video/839725031?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1&controls=0"
     >
       <b>Spotted an error</b> in the data source? <b>Edit the cell directly</b> and create an <b>updated view</b> in the data warehouse. Generated a <b>new, important table</b>? <b>Upload it</b> with one click.
+      <div className="mt-4">Our <b>data approval workflows</b> ensure that all edits align with your org&apos;s compliance policies.</div>
     </VideoFunctionalFact>
 
     <div className="bg-neutral-50">
